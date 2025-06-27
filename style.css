@@ -3,7 +3,7 @@
 body {
   margin: 0;
   background-color: #0a0a0a;
-  color: #d4af37; /* gold */
+  color: #d4af37;
   font-family: 'Playfair Display', serif;
   overflow: hidden;
 }
@@ -25,16 +25,16 @@ body {
 
 .intro h1 {
   font-size: 3.5rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.2rem;
 }
 
 .intro p {
   font-size: 1rem;
-  line-height: 1.8;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  line-height: 2;
+  letter-spacing: 0.5px;
+  text-transform: none;
   max-width: 350px;
 }
 
@@ -61,12 +61,18 @@ body {
 .nav a::before {
   content: '';
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border: 1px solid #d4af37;
   border-radius: 50%;
   margin-right: 12px;
   vertical-align: middle;
+  background-color: transparent;
+}
+
+.nav a.active::before,
+.nav a:nth-child(1)::before {
+  background-color: #d4af37;
 }
 
 .nav a:hover {
@@ -76,11 +82,11 @@ body {
 
 .circle-line {
   position: absolute;
-  left: -200px;
+  left: -300px;
   top: 50%;
-  height: 600px;
-  width: 600px;
-  border: 1px solid #444;
+  height: 800px;
+  width: 800px;
+  border: 1px solid #333;
   border-radius: 50%;
   transform: translateY(-50%);
   z-index: -1;
