@@ -1,12 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Your Name</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0a0a0a;
+      color: #d4af37; /* gold */
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .intro {
+      text-align: left;
+      max-width: 600px;
+    }
+
+    .intro h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .intro p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .nav {
+      position: absolute;
+      left: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #d4af37;
+      font-size: 1.1rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .nav a:hover {
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    .circle-line {
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      height: 300px;
+      width: 300px;
+      border: 1px solid #333;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+
+    .name {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      font-size: 1.3rem;
+    }
+
+    .contact {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      font-size: 1rem;
+      color: #d4af37;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, I'm Your Name</h1>
-  <p>This is my resume website.</p>
+  <div class="name">Your Name</div>
+  <div class="container">
+    <div class="nav">
+      <a href="#projects">Projects</a>
+      <a href="#extracurricular">Extracurricular</a>
+      <a href="#work">Work</a>
+      <a href="#volunteering">Volunteering</a>
+    </div>
+    <div class="circle-line"></div>
+    <div class="intro">
+      <h1>Hello, I'm Your Name</h1>
+      <p>
+        I'm a software developer with a passion for creating innovative,
+        impactful solutions. Welcome to my interactive portfolio.
+      </p>
+    </div>
+  </div>
+  <div class="contact">— Contact</div>
 </body>
 </html>
