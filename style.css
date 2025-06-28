@@ -259,7 +259,7 @@ section {
 
 .circle-line {
   position: absolute;
-  left: -650px; /* TEST: This should make the circle very visible on screen */
+  left: -550px; /* TEST: This should make the circle very visible on screen */
   top: 50%;
   height: 1000px;
   width: 1000px;
