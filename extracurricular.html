@@ -620,42 +620,85 @@
         <div class="category-item">
             <h2>Traveler</h2>
             <div class="category-content">
-              <p>Exploring Southeast Asia was a life-changing adventure. From the historic temples of Bangkok to the busy streets of Hanoi and the peaceful parks of Manila, every place told a unique story. The people I met and the sights I experienced will forever stay in my heart.</p>
+                <p>Exploring Southeast Asia was a life-changing adventure. From the historic temples of Bangkok to the busy streets of Hanoi and the peaceful parks of Manila, every place told a unique story. The people I met and the sights I experienced will forever stay in my heart.</p>
           
-              <div class="esports-slideshow">
-                <div class="slideshow-container">
-                  <div class="slide"><img src="19.jpeg" alt="Grand Venice Canal in Manila" class="slideshow-image"></div>
-                  <div class="slide"><img src="20.jpeg" alt="BGC Central Business District" class="slideshow-image"></div>
-                  <div class="slide"><img src="21.jpeg" alt="Street in Bangkok" class="slideshow-image"></div>
-                  <div class="slide"><img src="22.jpeg" alt="Golden Mount, Bangkok" class="slideshow-image"></div>
-                  <div class="slide"><img src="23.jpeg" alt="Roundabout in Bangkok" class="slideshow-image"></div>
-                  <div class="slide"><img src="24.jpeg" alt="Busy Bangkok Street" class="slideshow-image"></div>
-                  <div class="slide"><img src="25.jpeg" alt="Monas Monument, Jakarta" class="slideshow-image"></div>
-                  <div class="slide"><img src="26.jpeg" alt="Istiqlal Mosque, Jakarta" class="slideshow-image"></div>
-                  <div class="slide"><img src="27.jpeg" alt="Street in Hanoi" class="slideshow-image"></div>
-                  <div class="slide"><img src="28.jpeg" alt="Hanoi Train Street" class="slideshow-image"></div>
-                  <div class="slide"><img src="29.jpeg" alt="Park in Hanoi" class="slideshow-image"></div>
-                  <div class="slide"><img src="30.jpeg" alt="New Friends in Vietnam" class="slideshow-image"></div>
-                  <div class="slide"><img src="31.jpeg" alt="Golden Bridge, Da Nang" class="slideshow-image"></div>
+                <div class="esports-slideshow">
+                    <div class="slideshow-container">
+                        <button class="nav-arrow prev" onclick="changeSlide(-1)">‹</button>
+                        <button class="nav-arrow next" onclick="changeSlide(1)">›</button>
+                        
+                        <div class="slide active">
+                            <img src="19.jpeg" alt="Grand Venice Canal in Manila" class="slideshow-image">
+                            <div class="slide-description">Grand Venice Canal in Manila</div>
+                        </div>
+                        <div class="slide">
+                            <img src="20.jpeg" alt="BGC Central Business District" class="slideshow-image">
+                            <div class="slide-description">BGC Central Business District</div>
+                        </div>
+                        <div class="slide">
+                            <img src="21.jpeg" alt="Street in Bangkok" class="slideshow-image">
+                            <div class="slide-description">Street in Bangkok</div>
+                        </div>
+                        <div class="slide">
+                            <img src="22.jpeg" alt="Golden Mount, Bangkok" class="slideshow-image">
+                            <div class="slide-description">Golden Mount, Bangkok</div>
+                        </div>
+                        <div class="slide">
+                            <img src="23.jpeg" alt="Roundabout in Bangkok" class="slideshow-image">
+                            <div class="slide-description">Roundabout in Bangkok</div>
+                        </div>
+                        <div class="slide">
+                            <img src="24.jpeg" alt="Busy Bangkok Street" class="slideshow-image">
+                            <div class="slide-description">Busy Bangkok Street</div>
+                        </div>
+                        <div class="slide">
+                            <img src="25.jpeg" alt="Monas Monument, Jakarta" class="slideshow-image">
+                            <div class="slide-description">Monas Monument, Jakarta</div>
+                        </div>
+                        <div class="slide">
+                            <img src="26.jpeg" alt="Istiqlal Mosque, Jakarta" class="slideshow-image">
+                            <div class="slide-description">Istiqlal Mosque, Jakarta</div>
+                        </div>
+                        <div class="slide">
+                            <img src="27.jpeg" alt="Street in Hanoi" class="slideshow-image">
+                            <div class="slide-description">Street in Hanoi</div>
+                        </div>
+                        <div class="slide">
+                            <img src="28.jpeg" alt="Hanoi Train Street" class="slideshow-image">
+                            <div class="slide-description">Hanoi Train Street</div>
+                        </div>
+                        <div class="slide">
+                            <img src="29.jpeg" alt="Park in Hanoi" class="slideshow-image">
+                            <div class="slide-description">Park in Hanoi</div>
+                        </div>
+                        <div class="slide">
+                            <img src="30.jpeg" alt="New Friends in Vietnam" class="slideshow-image">
+                            <div class="slide-description">New Friends in Vietnam</div>
+                        </div>
+                        <div class="slide">
+                            <img src="31.jpeg" alt="Golden Bridge, Da Nang" class="slideshow-image">
+                            <div class="slide-description">Golden Bridge, Da Nang</div>
+                        </div>
+                    </div>
+                    <div class="slideshow-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                        <span class="indicator" data-slide="3"></span>
+                        <span class="indicator" data-slide="4"></span>
+                        <span class="indicator" data-slide="5"></span>
+                        <span class="indicator" data-slide="6"></span>
+                        <span class="indicator" data-slide="7"></span>
+                        <span class="indicator" data-slide="8"></span>
+                        <span class="indicator" data-slide="9"></span>
+                        <span class="indicator" data-slide="10"></span>
+                        <span class="indicator" data-slide="11"></span>
+                        <span class="indicator" data-slide="12"></span>
+                    </div>
                 </div>
-                <div class="slideshow-indicators">
-                  <span class="indicator active" data-slide="0"></span>
-                  <span class="indicator" data-slide="1"></span>
-                  <span class="indicator" data-slide="2"></span>
-                  <span class="indicator" data-slide="3"></span>
-                  <span class="indicator" data-slide="4"></span>
-                  <span class="indicator" data-slide="5"></span>
-                  <span class="indicator" data-slide="6"></span>
-                  <span class="indicator" data-slide="7"></span>
-                  <span class="indicator" data-slide="8"></span>
-                  <span class="indicator" data-slide="9"></span>
-                  <span class="indicator" data-slide="10"></span>
-                  <span class="indicator" data-slide="11"></span>
-                  <span class="indicator" data-slide="12"></span>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
+    
 
       <div class="category-item influencer-category">
         <h2>Influencer/Content Creator</h2>
@@ -799,7 +842,7 @@
     }
 
     function startSlideshow() {
-      slideshowInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+      slideshowInterval = setInterval(nextSlide, 6000); // Change slide every 4 seconds
     }
 
     function stopSlideshow() {
