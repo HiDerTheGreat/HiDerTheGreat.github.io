@@ -579,6 +579,55 @@
         animation: none;
       }
     }
+
+    .image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 1em;
+}
+
+.image-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1em;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+}
+
+.image-card:hover .caption {
+  opacity: 1;
+}
+
   </style>
 </head>
 <body>
@@ -619,85 +668,64 @@
       
         <div class="category-item">
             <h2>Traveler</h2>
-            <div class="category-content">
-                <p>Exploring Southeast Asia was a life-changing adventure. From the historic temples of Bangkok to the busy streets of Hanoi and the peaceful parks of Manila, every place told a unique story. The people I met and the sights I experienced will forever stay in my heart.</p>
+            <p>Exploring Southeast Asia was a life-changing adventure. From the historic temples of Bangkok to the busy streets of Hanoi and the peaceful parks of Manila, every place told a unique story. The people I met and the sights I experienced will forever stay in my heart.</p>
           
-                <div class="esports-slideshow">
-                    <div class="slideshow-container">
-                        <button class="nav-arrow prev" onclick="changeSlide(-1)">‹</button>
-                        <button class="nav-arrow next" onclick="changeSlide(1)">›</button>
-                        
-                        <div class="slide active">
-                            <img src="19.jpeg" alt="Grand Venice Canal in Manila" class="slideshow-image">
-                            <div class="slide-description">Grand Venice Canal in Manila</div>
-                        </div>
-                        <div class="slide">
-                            <img src="20.jpeg" alt="BGC Central Business District" class="slideshow-image">
-                            <div class="slide-description">BGC Central Business District</div>
-                        </div>
-                        <div class="slide">
-                            <img src="21.jpeg" alt="Street in Bangkok" class="slideshow-image">
-                            <div class="slide-description">Street in Bangkok</div>
-                        </div>
-                        <div class="slide">
-                            <img src="22.jpeg" alt="Golden Mount, Bangkok" class="slideshow-image">
-                            <div class="slide-description">Golden Mount, Bangkok</div>
-                        </div>
-                        <div class="slide">
-                            <img src="23.jpeg" alt="Roundabout in Bangkok" class="slideshow-image">
-                            <div class="slide-description">Roundabout in Bangkok</div>
-                        </div>
-                        <div class="slide">
-                            <img src="24.jpeg" alt="Busy Bangkok Street" class="slideshow-image">
-                            <div class="slide-description">Busy Bangkok Street</div>
-                        </div>
-                        <div class="slide">
-                            <img src="25.jpeg" alt="Monas Monument, Jakarta" class="slideshow-image">
-                            <div class="slide-description">Monas Monument, Jakarta</div>
-                        </div>
-                        <div class="slide">
-                            <img src="26.jpeg" alt="Istiqlal Mosque, Jakarta" class="slideshow-image">
-                            <div class="slide-description">Istiqlal Mosque, Jakarta</div>
-                        </div>
-                        <div class="slide">
-                            <img src="27.jpeg" alt="Street in Hanoi" class="slideshow-image">
-                            <div class="slide-description">Street in Hanoi</div>
-                        </div>
-                        <div class="slide">
-                            <img src="28.jpeg" alt="Hanoi Train Street" class="slideshow-image">
-                            <div class="slide-description">Hanoi Train Street</div>
-                        </div>
-                        <div class="slide">
-                            <img src="29.jpeg" alt="Park in Hanoi" class="slideshow-image">
-                            <div class="slide-description">Park in Hanoi</div>
-                        </div>
-                        <div class="slide">
-                            <img src="30.jpeg" alt="New Friends in Vietnam" class="slideshow-image">
-                            <div class="slide-description">New Friends in Vietnam</div>
-                        </div>
-                        <div class="slide">
-                            <img src="31.jpeg" alt="Golden Bridge, Da Nang" class="slideshow-image">
-                            <div class="slide-description">Golden Bridge, Da Nang</div>
-                        </div>
-                    </div>
-                    <div class="slideshow-indicators">
-                        <span class="indicator active" data-slide="0"></span>
-                        <span class="indicator" data-slide="1"></span>
-                        <span class="indicator" data-slide="2"></span>
-                        <span class="indicator" data-slide="3"></span>
-                        <span class="indicator" data-slide="4"></span>
-                        <span class="indicator" data-slide="5"></span>
-                        <span class="indicator" data-slide="6"></span>
-                        <span class="indicator" data-slide="7"></span>
-                        <span class="indicator" data-slide="8"></span>
-                        <span class="indicator" data-slide="9"></span>
-                        <span class="indicator" data-slide="10"></span>
-                        <span class="indicator" data-slide="11"></span>
-                        <span class="indicator" data-slide="12"></span>
-                    </div>
-                </div>
+            <div class="image-grid">
+              <div class="image-card">
+                <img src="19.jpeg" alt="Grand Venice Canal in Manila">
+                <div class="caption">Grand Venice Canal in Manila</div>
+              </div>
+              <div class="image-card">
+                <img src="20.jpeg" alt="BGC Central Business District">
+                <div class="caption">BGC Central Business District</div>
+              </div>
+              <div class="image-card">
+                <img src="21.jpeg" alt="Street in Bangkok">
+                <div class="caption">Street in Bangkok</div>
+              </div>
+              <div class="image-card">
+                <img src="22.jpeg" alt="Golden Mount, Bangkok">
+                <div class="caption">Golden Mount, Bangkok</div>
+              </div>
+              <div class="image-card">
+                <img src="23.jpeg" alt="Roundabout in Bangkok">
+                <div class="caption">Roundabout in Bangkok</div>
+              </div>
+              <div class="image-card">
+                <img src="24.jpeg" alt="Busy Bangkok Street">
+                <div class="caption">Busy Bangkok Street</div>
+              </div>
+              <div class="image-card">
+                <img src="25.jpeg" alt="Monas Monument, Jakarta">
+                <div class="caption">Monas Monument, Jakarta</div>
+              </div>
+              <div class="image-card">
+                <img src="26.jpeg" alt="Istiqlal Mosque, Jakarta">
+                <div class="caption">Istiqlal Mosque, Jakarta</div>
+              </div>
+              <div class="image-card">
+                <img src="27.jpeg" alt="Street in Hanoi">
+                <div class="caption">Street in Hanoi</div>
+              </div>
+              <div class="image-card">
+                <img src="28.jpeg" alt="Hanoi Train Street">
+                <div class="caption">Hanoi Train Street</div>
+              </div>
+              <div class="image-card">
+                <img src="29.jpeg" alt="Park in Hanoi">
+                <div class="caption">Park in Hanoi</div>
+              </div>
+              <div class="image-card">
+                <img src="30.jpeg" alt="New Friends in Vietnam">
+                <div class="caption">New Friends in Vietnam</div>
+              </div>
+              <div class="image-card">
+                <img src="31.jpeg" alt="Golden Bridge, Da Nang">
+                <div class="caption">Golden Bridge, Da Nang</div>
+              </div>
             </div>
-        </div>
+          </div>
+          
     
         
     
