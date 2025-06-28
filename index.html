@@ -8,14 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="page-transition"></div>
+  
   <div class="name">Haider Uraizee</div>
 
   <div class="container">
     <div class="nav">
-        <a href="projects.html">Projects</a>
-        <a href="extracurricular.html">Extracurricular</a>
-        <a href="work.html">Work</a>
-        <a href="volunteering.html">Volunteering</a>
+        <a href="projects.html" onclick="navigateWithTransition(event, 'projects.html')">Projects</a>
+        <a href="extracurricular.html" onclick="navigateWithTransition(event, 'extracurricular.html')">Extracurricular</a>
+        <a href="work.html" onclick="navigateWithTransition(event, 'work.html')">Work</a>
+        <a href="volunteering.html" onclick="navigateWithTransition(event, 'volunteering.html')">Volunteering</a>
     </div>      
 
     <div class="circle-line"></div>
@@ -32,10 +34,22 @@
   <div class="contact">&mdash; Contact</div>
 
   <script>
+    // Enhanced navigation with smooth transitions
+    function navigateWithTransition(event, url) {
+      event.preventDefault();
+      
+      const transition = document.querySelector('.page-transition');
+      transition.classList.add('active');
+      
+      setTimeout(() => {
+        window.location.href = url;
+      }, 300);
+    }
+
+    // Page load animation
     window.addEventListener("load", () => {
       document.body.classList.add("loaded");
     });
   </script>
 </body>
 </html>
-
