@@ -207,7 +207,7 @@ section {
 
 .circle-line {
   position: absolute;
-  left: -400px;
+  left: -550px; /* Changed from -400px to -550px to move it further left */
   top: 50%;
   height: 1000px;
   width: 1000px;
@@ -381,6 +381,11 @@ section {
     bottom: 30px;
     font-size: 0.8rem;
   }
+
+  /* Adjust circle position for mobile to prevent horizontal scroll */
+  .circle-line {
+    left: -650px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -412,5 +417,10 @@ section {
     left: 20px;
     bottom: 20px;
     font-size: 0.75rem;
+  }
+
+  /* Move circle even further left on very small screens */
+  .circle-line {
+    left: -700px;
   }
 }
