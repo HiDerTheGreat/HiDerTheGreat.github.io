@@ -3,18 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Volunteering | Your Name</title>
+  <title>Work | Your Name</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="name"><a href="index.html" style="color:inherit; text-decoration:none">Your Name</a></div>
+  <div class="name">
+    <a href="index.html" style="color:inherit; text-decoration:none">Your Name</a>
+  </div>
+  <div class="back">
+    <a href="index.html">← Back</a>
+  </div>
   <div class="container">
     <div class="circle-line"></div>
     <div class="intro">
-      <h1>Volunteering</h1>
-      <p>See the community-driven initiatives I've supported through code, mentoring, and outreach—giving back through tech.</p>
+      <h1>Work</h1>
+      <p>Learn about my professional experience and contributions in software development roles—both freelance and industry-based.</p>
     </div>
   </div>
   <div class="contact">— Contact</div>
+  <script>
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+  </script>
 </body>
 </html>

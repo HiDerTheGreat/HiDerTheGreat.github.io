@@ -10,6 +10,13 @@ body {
   color: #d4af37;
   font-family: 'Playfair Display', serif;
   overflow-x: hidden;
+
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
 }
 
 section {
@@ -68,6 +75,7 @@ section {
   letter-spacing: 2px;
   transition: transform 0.3s, color 0.3s;
   position: relative;
+  overflow: hidden;
 }
 
 .nav a::before {
@@ -85,6 +93,22 @@ section {
 .nav a.active::before,
 .nav a:nth-child(1)::before {
   background-color: #d4af37;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.nav a:hover::after {
+  transform: translateX(0);
 }
 
 .nav a:hover {
@@ -119,4 +143,23 @@ section {
   left: 40px;
   font-size: 1rem;
   color: #d4af37;
+}
+
+/* BACK BUTTON */
+.back {
+  position: absolute;
+  top: 80px;
+  left: 40px;
+  font-size: 0.9rem;
+}
+
+.back a {
+  color: #d4af37;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.back a:hover {
+  color: #ffffff;
+  transform: translateX(-5px);
 }
