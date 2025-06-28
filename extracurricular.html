@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,7 +133,7 @@
     /* Photo Gallery Styles */
     .photo-gallery {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 15px;
       margin-top: 20px;
     }
@@ -164,6 +165,36 @@
     .photo-slot:hover .gallery-image {
       filter: brightness(1.1);
       transform: scale(1.1);
+    }
+
+    /* Social Link Styles */
+    .social-link {
+      margin: 15px 0 20px 0;
+    }
+
+    .social-link a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(212, 175, 55, 0.8);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-style: normal;
+      font-weight: 500;
+      padding: 8px 16px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 25px;
+      background: rgba(212, 175, 55, 0.05);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    .social-link a:hover {
+      color: #d4af37;
+      border-color: rgba(212, 175, 55, 0.6);
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
     }
 
     /* Special styling for influencer category */
@@ -231,6 +262,11 @@
         font-size: 1.5rem;
       }
 
+      .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
       .name {
         left: 20px;
         top: 20px;
@@ -265,6 +301,11 @@
 
       .category-item h2 {
         font-size: 1.3rem;
+      }
+
+      .photo-gallery {
+        grid-template-columns: 1fr;
+        gap: 10px;
       }
     }
   </style>
@@ -305,6 +346,12 @@
         <div class="category-content">
           <p>Building digital communities and inspiring audiences through authentic storytelling. From viral content to meaningful connections, I create experiences that resonate across platforms and leave lasting impact.</p>
           
+          <div class="social-link">
+            <a href="https://www.facebook.com/MobileLegendsNorthAmerica/posts/336825288750187" target="_blank" rel="noopener noreferrer">
+              🔗 Featured on Mobile Legends North America
+            </a>
+          </div>
+          
           <div class="photo-gallery">
             <div class="photo-slot">
               <img src="1.jpeg" alt="Influencer Photo 1" class="gallery-image">
@@ -317,6 +364,12 @@
             </div>
             <div class="photo-slot">
               <img src="4.jpeg" alt="Influencer Photo 4" class="gallery-image">
+            </div>
+            <div class="photo-slot">
+              <img src="5.jpeg" alt="Influencer Photo 5" class="gallery-image">
+            </div>
+            <div class="photo-slot">
+              <img src="6.jpeg" alt="Influencer Photo 6" class="gallery-image">
             </div>
           </div>
         </div>
