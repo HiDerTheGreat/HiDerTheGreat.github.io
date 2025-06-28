@@ -86,18 +86,27 @@ section {
   justify-content: center;
 }
 
+/* UPDATED INTRO SECTION TO ACCOMMODATE IMAGE */
 .intro {
-  text-align: left;
-  max-width: 600px;
-  margin-left: 0;
+  display: flex;
+  align-items: center;
+  gap: 60px;
   position: absolute;
-  right: 15%;
+  right: 10%;
   top: 50%;
   transform: translateY(-50%);
+  max-width: 800px;
+  z-index: 10;
 }
 
-.intro h1 {
-  font-size: 4.5rem;
+.intro-content {
+  text-align: left;
+  max-width: 450px;
+  flex: 1;
+}
+
+.intro-content h1 {
+  font-size: 3.5rem;
   font-weight: 400;
   letter-spacing: -1px;
   margin-bottom: 2rem;
@@ -106,7 +115,7 @@ section {
   text-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
 }
 
-.intro p {
+.intro-content p {
   font-size: 1.1rem;
   line-height: 1.8;
   letter-spacing: 0.5px;
@@ -114,6 +123,30 @@ section {
   max-width: 400px;
   font-weight: 400;
   text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* IMAGE STYLING */
+.intro-image {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5;
+  transition: all 0.4s ease;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 
+    0 0 30px rgba(212, 175, 55, 0.2),
+    inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.intro-image:hover {
+  transform: scale(1.05) rotate(2deg);
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 
+    0 0 50px rgba(212, 175, 55, 0.4),
+    inset 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
 .nav {
@@ -155,7 +188,10 @@ section {
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
-/* Active state removed - circles only fill on hover */
+.nav a.active::before {
+  background-color: #d4af37;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+}
 
 .nav a:hover::before {
   background-color: #d4af37;
@@ -276,4 +312,105 @@ section {
 .page-transition.active {
   opacity: 1;
   pointer-events: all;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1200px) {
+  .intro {
+    right: 5%;
+    gap: 40px;
+  }
+  
+  .intro-content h1 {
+    font-size: 3rem;
+  }
+  
+  .intro-image {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    text-align: center;
+    right: 50%;
+    transform: translate(50%, -50%);
+    gap: 30px;
+    max-width: 90%;
+  }
+
+  .intro-content {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .intro-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-content p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .intro-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .nav {
+    left: 30px;
+    gap: 25px;
+  }
+
+  .nav a {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
+
+  .name {
+    left: 30px;
+    top: 30px;
+    font-size: 1rem;
+  }
+
+  .contact {
+    left: 30px;
+    bottom: 30px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-content h1 {
+    font-size: 2rem;
+  }
+
+  .intro-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .nav {
+    left: 20px;
+  }
+
+  .nav a {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+
+  .name {
+    left: 20px;
+    top: 20px;
+    font-size: 0.9rem;
+  }
+
+  .contact {
+    left: 20px;
+    bottom: 20px;
+    font-size: 0.75rem;
+  }
 }
