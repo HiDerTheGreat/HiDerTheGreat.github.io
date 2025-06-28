@@ -155,10 +155,7 @@ section {
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
-.nav a.active::before {
-  background-color: #d4af37;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
-}
+/* Active state removed - circles only fill on hover */
 
 .nav a:hover::before {
   background-color: #d4af37;
