@@ -207,7 +207,7 @@ section {
 
 .circle-line {
   position: absolute;
-  left: -650px; /* Changed from -400px to -550px to move it further left */
+  left: -200px; /* Moved right from -550px - try positive values like 50px or 100px to move it even further right */
   top: 50%;
   height: 1000px;
   width: 1000px;
