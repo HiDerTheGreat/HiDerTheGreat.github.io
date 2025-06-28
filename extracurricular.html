@@ -287,10 +287,80 @@
       margin-top: 20px;
     }
 
-    /* Model Gallery - 3x2 grid */
-    .model-gallery {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+    /* Esports Slideshow Styles */
+    .esports-slideshow {
+      margin-top: 20px;
+      position: relative;
+      width: 100%;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 2px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slideshow-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease, filter 0.3s ease;
+      filter: brightness(0.9);
+      cursor: pointer;
+    }
+
+    .slideshow-image:hover {
+      transform: scale(1.15);
+      filter: brightness(1.1);
+      z-index: 10;
+    }
+
+    .slideshow-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 15px;
+      padding: 0 10px;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+    }
+
+    .indicator.active {
+      background: rgba(212, 175, 55, 0.8);
+      transform: scale(1.2);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+    }
+
+    .indicator:hover {
+      background: rgba(212, 175, 55, 0.6);
+      transform: scale(1.1);
     }
 
     .photo-slot {
@@ -596,7 +666,38 @@
       <div class="category-item">
         <h2>Esports</h2>
         <div class="category-content">
-          <p>Content coming soon...</p>
+          <p>Competitive gaming has taught me the importance of teamwork, strategy, and quick decision-making under pressure. From tournament victories to late-night practice sessions, esports has shaped my ability to perform at the highest level while maintaining focus and dedication.</p>
+          
+          <div class="esports-slideshow">
+            <div class="slideshow-container">
+              <div class="slide">
+                <img src="13.jpeg" alt="Esports Photo 1" class="slideshow-image">
+              </div>
+              <div class="slide">
+                <img src="14.jpeg" alt="Esports Photo 2" class="slideshow-image">
+              </div>
+              <div class="slide">
+                <img src="15.jpeg" alt="Esports Photo 3" class="slideshow-image">
+              </div>
+              <div class="slide">
+                <img src="16.jpeg" alt="Esports Photo 4" class="slideshow-image">
+              </div>
+              <div class="slide">
+                <img src="17.jpeg" alt="Esports Photo 5" class="slideshow-image">
+              </div>
+              <div class="slide">
+                <img src="18.jpeg" alt="Esports Photo 6" class="slideshow-image">
+              </div>
+            </div>
+            <div class="slideshow-indicators">
+              <span class="indicator active" data-slide="0"></span>
+              <span class="indicator" data-slide="1"></span>
+              <span class="indicator" data-slide="2"></span>
+              <span class="indicator" data-slide="3"></span>
+              <span class="indicator" data-slide="4"></span>
+              <span class="indicator" data-slide="5"></span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -618,9 +719,62 @@
       }, 300);
     }
 
+    // Esports Slideshow functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    let slideshowInterval;
+
+    function showSlide(index) {
+      // Remove active class from all slides and indicators
+      slides.forEach(slide => slide.classList.remove('active'));
+      indicators.forEach(indicator => indicator.classList.remove('active'));
+      
+      // Add active class to current slide and indicator
+      slides[index].classList.add('active');
+      indicators[index].classList.add('active');
+      
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function startSlideshow() {
+      slideshowInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+    }
+
+    function stopSlideshow() {
+      clearInterval(slideshowInterval);
+    }
+
     // Page load animation
     window.addEventListener("load", () => {
       document.body.classList.add("loaded");
+      
+      // Initialize slideshow if slides exist
+      if (slides.length > 0) {
+        showSlide(0);
+        startSlideshow();
+        
+        // Add click event listeners to indicators
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener('click', () => {
+            stopSlideshow();
+            showSlide(index);
+            setTimeout(startSlideshow, 2000); // Restart auto-slideshow after 2 seconds
+          });
+        });
+
+        // Pause slideshow on hover, resume on mouse leave
+        const slideshowContainer = document.querySelector('.slideshow-container');
+        if (slideshowContainer) {
+          slideshowContainer.addEventListener('mouseenter', stopSlideshow);
+          slideshowContainer.addEventListener('mouseleave', startSlideshow);
+        }
+      }
     });
 
     // Subtle parallax effect for floating images
