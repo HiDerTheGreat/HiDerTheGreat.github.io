@@ -215,8 +215,8 @@
     }
 
     .categories-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      display: flex;
+      flex-direction: column;
       gap: 40px;
       margin-top: 60px;
     }
@@ -644,17 +644,6 @@
   background: gold;
   margin: 0 auto 2em;
   border-radius: 2px;
-}
-
-.container {
-  display: block; /* ensures vertical stacking */
-  width: 100%;
-}
-
-.category-item {
-  width: 100%;
-  margin-bottom: 3em; /* adds spacing between items */
-  display: block;
 }
 
   </style>
