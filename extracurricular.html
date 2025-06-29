@@ -646,6 +646,15 @@
   border-radius: 2px;
 }
 
+.traveler-grid {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.traveler-grid .image-card img {
+  height: 180px;
+  object-fit: cover;
+}
+
   </style>
 </head>
 <body>
@@ -688,7 +697,7 @@
             <h2>Traveler</h2>
             <p>Exploring Southeast Asia was a life-changing adventure. From the historic temples of Bangkok to the busy streets of Hanoi and the peaceful parks of Manila, every place told a unique story. The people I met and the sights I experienced will forever stay in my heart.</p>
           
-            <div class="image-grid">
+            <div class="image-grid traveler-grid">
               <div class="image-card">
                 <img src="19.jpeg" alt="Grand Venice Canal in Manila">
                 <div class="caption">Grand Venice Canal in Manila</div>
