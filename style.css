@@ -477,19 +477,48 @@ section {
   }
 }
 
-.timeline {
-    max-width: 900px;
-    margin: 100px auto 50px;
+.content-section {
+    max-width: 1000px;
+    margin: 150px auto 80px;
     padding: 0 20px;
-    color: #d4af37;
+    position: relative;
+  }
+  
+  .content-section .intro {
+    text-align: left;
+    margin-bottom: 60px;
+  }
+  
+  .content-section .intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .content-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  }
+  
+  .content-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  }
+  
+  .timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 10px;
     z-index: 5;
+    color: #d4af37;
   }
   
   .timeline-item {
     margin-bottom: 60px;
-    padding-bottom: 20px;
+    padding-left: 25px;
     border-left: 2px solid rgba(212, 175, 55, 0.3);
-    padding-left: 20px;
     position: relative;
   }
   
@@ -497,32 +526,33 @@ section {
     content: '';
     position: absolute;
     left: -9px;
-    top: 5px;
-    width: 15px;
-    height: 15px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
     background-color: #d4af37;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
   }
   
   .timeline-item h2 {
-    margin: 0;
     font-size: 1.5rem;
     font-weight: 500;
+    margin-bottom: 0;
     text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
   }
   
   .timeline-item h3 {
-    margin: 5px 0 10px;
     font-size: 1.2rem;
+    margin: 5px 0 10px;
     font-weight: 400;
-    opacity: 0.9;
+    opacity: 0.85;
   }
   
-  .timeline-item .date, .timeline-item .category {
+  .timeline-item .date,
+  .timeline-item .category {
     font-size: 0.9rem;
     opacity: 0.7;
-    margin: 4px 0;
+    margin: 3px 0;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -536,5 +566,15 @@ section {
   .timeline-item ul li {
     margin-bottom: 6px;
     list-style-type: disc;
+  }
+  
+  @media (max-width: 768px) {
+    .content-section h1 {
+      font-size: 2.2rem;
+    }
+  
+    .content-section p {
+      font-size: 1rem;
+    }
   }
   
