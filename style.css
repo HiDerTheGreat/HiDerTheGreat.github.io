@@ -538,4 +538,44 @@ section {
     list-style-type: disc;
   }
   
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 100px 40px;
+  }
+  
+  .main-content .intro {
+    position: static;
+    transform: none;
+    margin-bottom: 40px;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+  }
+  
+  .main-content .intro-content {
+    max-width: 600px;
+  }
+  
+  .timeline {
+    margin-top: 0;
+  }
+  
+  /* Responsive adjustment */
+  @media (max-width: 768px) {
+    .main-content {
+      padding: 40px 20px;
+    }
+  
+    .main-content .intro {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .main-content .intro-content {
+      text-align: center;
+    }
+  }
   
