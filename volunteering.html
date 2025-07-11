@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="page-transition"></div>
-  
+
   <div class="name">
     <a href="index.html" onclick="navigateHome(event)">Haider Uraizee</a>
   </div>
@@ -21,15 +21,15 @@
   <div class="container">
     <div class="circle-line"></div>
     <div class="intro">
-      <h1>Volunteering</h1>
-      <p>
-        Community service and volunteer work that demonstrates my commitment
-        to giving back and making a positive impact in the community.
-      </p>
+      <div class="intro-content">
+        <h1>Volunteering</h1>
+        <p>
+          Community service and volunteer work that demonstrates my commitment
+          to giving back and making a positive impact in the community.
+        </p>
+      </div>
     </div>
   </div>
-
-  <div class="contact">— Contact</div>
 
   <div class="timeline">
 
@@ -46,7 +46,7 @@
         <li>Participated in team meetings to gain insights into professional office workflows and administrative procedures.</li>
       </ul>
     </div>
-  
+
     <div class="timeline-item">
       <h2>IT Helper</h2>
       <h3>Cerritos Public Library</h3>
@@ -61,7 +61,7 @@
         <li>Handled inbound calls to provide information and resolve technical inquiries.</li>
       </ul>
     </div>
-  
+
     <div class="timeline-item">
       <h2>IT Volunteer</h2>
       <h3>ABC Unified School District</h3>
@@ -75,7 +75,24 @@
         <li>Assisting with inventory management, helping track and organize school district technology assets.</li>
       </ul>
     </div>
-  
-  </div>  
+
+  </div>
+
+  <div class="contact">— Contact</div>
+
+  <script>
+    function navigateHome(event) {
+      event.preventDefault();
+      const transition = document.querySelector('.page-transition');
+      transition.classList.add('active');
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 300);
+    }
+
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+  </script>
 </body>
 </html>
