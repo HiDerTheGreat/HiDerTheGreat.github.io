@@ -579,3 +579,17 @@ section {
     }
   }
   
+  /* Center the volunteering intro section on the volunteering page */
+.volunteer-centered {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .volunteer-centered .intro-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
