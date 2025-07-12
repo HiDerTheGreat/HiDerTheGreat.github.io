@@ -640,5 +640,11 @@ section {
     100% { transform: rotate(360deg) }
   }
   
-  
+  /* Center “Work Experience” header and its paragraph */
+.main-content .intro-content {
+    max-width: 600px;
+    margin: 0 auto;      /* centers the whole block */
+    text-align: center;  /* centers the h1 and <p> inside */
+}
+
   
