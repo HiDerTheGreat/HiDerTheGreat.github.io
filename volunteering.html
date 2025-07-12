@@ -14,24 +14,15 @@
       left: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden;
-      z-index: -1;
       pointer-events: none;
+      z-index: -1;
     }
 
     .floating {
       position: absolute;
-      animation: float 20s linear infinite, spin 10s linear infinite;
-      opacity: 0.6;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) translateX(0);
-      }
-      100% {
-        transform: translateY(-100vh) translateX(100vw);
-      }
+      width: 60px;
+      opacity: 0.5;
+      animation: spin 20s linear infinite;
     }
 
     @keyframes spin {
@@ -112,9 +103,9 @@
   </div>
 
   <div class="floating-images">
-    <img src="Cerritos.png" class="floating" />
-    <img src="Library.png" class="floating" />
-    <img src="ABC.png" class="floating" />
+    <img src="image1.png" class="floating" />
+    <img src="image2.png" class="floating" />
+    <img src="image3.png" class="floating" />
   </div>
 
   <div class="contact">— Contact</div>
@@ -129,15 +120,36 @@
       }, 300);
     }
 
-    window.addEventListener("load", () => {
-      document.body.classList.add("loaded");
+    function startFloating() {
+      const imgs = document.querySelectorAll('.floating');
+      imgs.forEach((img) => {
+        let x = Math.random() * window.innerWidth;
+        let y = Math.random() * window.innerHeight;
+        let dx = (Math.random() - 0.5) * 0.5;
+        let dy = (Math.random() - 0.5) * 0.5;
 
-      document.querySelectorAll(".floating").forEach((el) => {
-        el.style.top = Math.random() * window.innerHeight + "px";
-        el.style.left = Math.random() * window.innerWidth + "px";
-        el.style.animationDuration = (10 + Math.random() * 20) + "s";
-        el.style.width = (50 + Math.random() * 100) + "px";
+        img.style.left = x + 'px';
+        img.style.top = y + 'px';
+
+        function move() {
+          x += dx;
+          y += dy;
+
+          // Bounce off edges
+          if (x < 0 || x > window.innerWidth - img.width) dx = -dx;
+          if (y < 0 || y > window.innerHeight - img.height) dy = -dy;
+
+          img.style.transform = `translate(${x}px, ${y}px) rotate(${performance.now() / 50}deg)`;
+          requestAnimationFrame(move);
+        }
+
+        move();
       });
+    }
+
+    window.addEventListener('load', () => {
+      document.body.classList.add("loaded");
+      startFloating();
     });
   </script>
 </body>
