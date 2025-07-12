@@ -580,11 +580,17 @@ section {
   }
   
   /* Center the volunteering intro section on the volunteering page */
-  .volunteer-centered {
+  /* Volunteering page override */
+.volunteer-centered {
+    position: static !important;
+    transform: none !important;
+    right: auto !important;
+    top: auto !important;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 60px 20px 20px;
     width: 100%;
-    margin-bottom: 40px;
   }
   
   .volunteer-centered .intro-content {
@@ -593,13 +599,9 @@ section {
     margin: 0 auto;
   }
   
-  .volunteer-centered .intro-content h1 {
+  .volunteer-centered .intro-content h1,
+  .volunteer-centered .intro-content p {
     text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 3rem; /* Adjust if needed for size match */
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
   }
+  
   
