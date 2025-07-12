@@ -4,12 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Work Experience | Haider Uraizee</title>
+
+  <!-- Core styles -->
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Page‑change overlay -->
   <div class="page-transition"></div>
 
+  <!-- ▼ Floating, faded company logos (Option 1) ▼ -->
+  <div class="floating-images">
+    <!-- Adjust positions / filenames as you like -->
+    <img src="uscomputers.png"  class="floating" style="top: 15%; left: 5%;  opacity: .05; filter: grayscale(100%) blur(1px);"  alt="US Computers logo">
+    <img src="moonton.png"      class="floating" style="top: 40%; left: 80%; opacity: .05; filter: grayscale(100%) blur(1px);"  alt="MOONTON Games logo">
+    <img src="kaiser.png"       class="floating" style="top: 75%; left: 30%; opacity: .05; filter: grayscale(100%) blur(1px);"  alt="Kaiser Permanente logo">
+  </div>
+  <!-- ▲ Floating logos end ▲ -->
+
+  <!-- Site‑wide nav items -->
   <div class="name">
     <a href="index.html" onclick="navigateHome(event)">Haider Uraizee</a>
   </div>
@@ -18,81 +31,80 @@
     <a href="index.html" onclick="navigateHome(event)">Back to Home</a>
   </div>
 
+  <!-- Main content -->
   <div class="main-content">
-    <div class="intro volunteer-centered">
+    <!-- Header + blurb -->
+    <div class="intro">
       <div class="intro-content">
         <h1>Work Experience</h1>
         <p>
           Professional experiences that have shaped my understanding of technology,
-          teamwork, and real-world application of computer science principles.
+          teamwork, and real‑world application of computer‑science principles.
         </p>
       </div>
     </div>
 
+    <!-- Timeline -->
     <div class="timeline">
       <!-- IT Technician -->
       <div class="timeline-item">
         <h2>IT Technician</h2>
-        <h3>US Computers · Full-time</h3>
-        <div class="date">Jun 2024 - Present</div>
-        <div class="category">Placentia, California, United States · On-site</div>
+        <h3>US Computers · Full‑time</h3>
+        <div class="date">Jun 2024 – Present</div>
+        <div class="category">Placentia, California, United States · On‑site</div>
         <ul>
           <li>Process orders and manage financial transactions using QuickBooks.</li>
           <li>Create and organize sales reports and maintain accurate records for business analysis.</li>
           <li>Design marketing materials using Canva and manage operations with Google Suite tools.</li>
-          <li>Deliver high-quality customer service to clients, addressing their inquiries and product needs.</li>
+          <li>Deliver high‑quality customer service to clients, addressing their inquiries and product needs.</li>
           <li>Conduct market research to identify new products and business opportunities for increased sales.</li>
-          <li>Setup laptops for usage by uploading software and troubleshooting if needed.</li>
+          <li>Set up laptops for usage by uploading software and troubleshooting if needed.</li>
         </ul>
       </div>
 
       <!-- Community Manager -->
       <div class="timeline-item">
         <h2>Community Manager</h2>
-        <h3>MOONTON GAMES</h3>
-        <div class="date">Jan 2023 - Apr 2024</div>
-        <div class="category">United States · Hybrid</div>
+        <h3>MOONTON GAMES</h3>
+        <div class="date">Jan 2023 – Apr 2024</div>
+        <div class="category">United States · Hybrid</div>
         <ul>
-          <li>Organized and hosted community events for over 50 participants, enhancing engagement.</li>
+          <li>Organized and hosted community events for over 50 participants, enhancing engagement.</li>
           <li>Produced digital content to drive community growth and participation.</li>
           <li>Analyzed YouTube data and emerging trends to optimize content strategy.</li>
           <li>Managed partnerships with local businesses to foster community collaborations.</li>
-          <li>Enhanced time management and multitasking abilities through event and project planning.</li>
+          <li>Enhanced time‑management and multitasking abilities through event and project planning.</li>
         </ul>
       </div>
 
       <!-- IT Consultant -->
       <div class="timeline-item">
         <h2>IT Consultant</h2>
-        <h3>Kaiser Permanente · Internship</h3>
-        <div class="date">Jun 2018 - Aug 2018</div>
-        <div class="category">Downey, California, United States · On-site</div>
+        <h3>Kaiser Permanente · Internship</h3>
+        <div class="date">Jun 2018 – Aug 2018</div>
+        <div class="category">Downey, California, United States · On‑site</div>
         <ul>
-          <li>Developed strong organizational skills by managing project-related documents.</li>
+          <li>Developed strong organizational skills by managing project‑related documents.</li>
           <li>Created and delivered presentations on IT solutions to internal teams.</li>
-          <li>Collected and analyzed data using Excel to support IT project decision-making.</li>
+          <li>Collected and analyzed data using Excel to support IT project decision‑making.</li>
           <li>Took detailed notes during meetings to ensure full comprehension of assigned tasks.</li>
           <li>Collaborated with IT consultants to support ongoing technology initiatives.</li>
         </ul>
       </div>
-    </div>
-  </div>
+    </div><!-- /timeline -->
+  </div><!-- /main‑content -->
 
-  <div class="contact">— Contact</div>
+  <div class="contact">— Contact</div>
 
+  <!-- Smooth home‑navigation transition -->
   <script>
     function navigateHome(event) {
       event.preventDefault();
       const transition = document.querySelector('.page-transition');
       transition.classList.add('active');
-      setTimeout(() => {
-        window.location.href = 'index.html';
-      }, 300);
+      setTimeout(() => { window.location.href = 'index.html'; }, 300);
     }
-
-    window.addEventListener("load", () => {
-      document.body.classList.add("loaded");
-    });
+    window.addEventListener('load', () => { document.body.classList.add('loaded'); });
   </script>
 </body>
 </html>
