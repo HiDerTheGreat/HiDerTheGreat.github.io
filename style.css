@@ -640,12 +640,6 @@ section {
     100% { transform: rotate(360deg) }
   }
   
-/* Center the Work‑Experience heading and paragraph together */
-.main-content .intro {
-    flex-direction: column;   /* stack h1 and p vertically */
-    align-items: center;      /* center the block itself */
-    text-align: center;       /* center text inside */
-  }
   
 
   
