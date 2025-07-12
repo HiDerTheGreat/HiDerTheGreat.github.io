@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="page-transition"></div>
-  
+
   <div class="name">
     <a href="index.html" onclick="navigateHome(event)">Haider Uraizee</a>
   </div>
@@ -18,14 +18,59 @@
     <a href="index.html" onclick="navigateHome(event)">Back to Home</a>
   </div>
 
-  <div class="container">
-    <div class="circle-line"></div>
+  <div class="main-content">
     <div class="intro">
-      <h1>Work Experience</h1>
-      <p>
-        Professional experiences that have shaped my understanding of technology,
-        teamwork, and real-world application of computer science principles.
-      </p>
+      <div class="intro-content">
+        <h1>Work Experience</h1>
+        <p>
+          Professional experiences that have shaped my technical, creative, and leadership abilities.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <!-- IT Technician -->
+      <div class="timeline-item">
+        <h2>IT Technician</h2>
+        <h3>US Computers · Full-time</h3>
+        <div class="date">Jun 2024 – Present · Placentia, CA · On-site</div>
+        <ul>
+          <li>Process orders and manage financial transactions using QuickBooks.</li>
+          <li>Create and organize sales reports for business analysis.</li>
+          <li>Design marketing materials via Canva and manage operations with Google Suite.</li>
+          <li>Deliver high-quality customer service and address client inquiries.</li>
+          <li>Conduct market research to identify growth opportunities.</li>
+          <li>Setup laptops, install software, and troubleshoot issues.</li>
+        </ul>
+      </div>
+
+      <!-- Community Manager -->
+      <div class="timeline-item">
+        <h2>Community Manager</h2>
+        <h3>MOONTON GAMES</h3>
+        <div class="date">Jan 2023 – Apr 2024 · United States · Hybrid</div>
+        <ul>
+          <li>Organized and hosted community events for 50+ participants.</li>
+          <li>Produced digital content to boost community engagement.</li>
+          <li>Analyzed YouTube trends to optimize strategy.</li>
+          <li>Managed partnerships with local businesses.</li>
+          <li>Improved multitasking and time management skills through events.</li>
+        </ul>
+      </div>
+
+      <!-- IT Consultant -->
+      <div class="timeline-item">
+        <h2>IT Consultant</h2>
+        <h3>Kaiser Permanente · Internship</h3>
+        <div class="date">Jun 2018 – Aug 2018 · Downey, CA · On-site</div>
+        <ul>
+          <li>Organized project documents to support team efficiency.</li>
+          <li>Delivered presentations on IT solutions to internal teams.</li>
+          <li>Analyzed data in Excel to support project decisions.</li>
+          <li>Documented meetings to ensure clear understanding of tasks.</li>
+          <li>Assisted IT consultants on key technology initiatives.</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -34,10 +79,8 @@
   <script>
     function navigateHome(event) {
       event.preventDefault();
-      
       const transition = document.querySelector('.page-transition');
       transition.classList.add('active');
-      
       setTimeout(() => {
         window.location.href = 'index.html';
       }, 300);
