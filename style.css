@@ -579,29 +579,32 @@ section {
     }
   }
   
-  /* Center the volunteering intro section on the volunteering page */
-  /* Volunteering page override */
+  /* Center everything inside the intro section for the volunteering page */
 .volunteer-centered {
-    position: static !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    padding: 100px 20px 40px;
+    margin: 0 auto;
+    box-sizing: border-box;
     transform: none !important;
     right: auto !important;
     top: auto !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 20px 20px;
-    width: 100%;
   }
   
   .volunteer-centered .intro-content {
+    max-width: 700px;
+    width: 100%;
     text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
   }
   
   .volunteer-centered .intro-content h1,
   .volunteer-centered .intro-content p {
     text-align: center;
+    margin: 0 auto;
   }
+  
   
   
