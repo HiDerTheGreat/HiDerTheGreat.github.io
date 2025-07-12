@@ -640,6 +640,26 @@ section {
     100% { transform: rotate(360deg) }
   }
   
+  /* Floating logos wrapper  (increase z‑index) */
+.floating-images {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 3;          /* ↑ was ‑1 ; now it sits above body::before but below text */
+    pointer-events: none;
+  }
+  
+  /* Individual logo settings */
+  .floating {
+    position: absolute;
+    width: 100px;        /* bump up if you want them bigger */
+    animation: float 25s linear infinite, spin 30s linear infinite;
+    opacity: 0.08;       /* raise from 0.05 so it’s visible */
+    filter: grayscale(100%) blur(1px);
+  }
   
 
   
