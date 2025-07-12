@@ -10,19 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Page‑change overlay -->
+  <!-- Page transition overlay -->
   <div class="page-transition"></div>
 
-  <!-- ▼ Floating, faded company logos (Option 1) ▼ -->
+  <!-- Floating images -->
   <div class="floating-images">
-    <!-- Adjust positions / filenames as you like -->
-    <img src="uscomputers.png"  class="floating" style="top: 15%; left: 5%;  opacity: .05; filter: grayscale(100%) blur(1px);"  alt="US Computers logo">
-    <img src="moonton.png"      class="floating" style="top: 40%; left: 80%; opacity: .05; filter: grayscale(100%) blur(1px);"  alt="MOONTON Games logo">
-    <img src="kaiser.png"       class="floating" style="top: 75%; left: 30%; opacity: .05; filter: grayscale(100%) blur(1px);"  alt="Kaiser Permanente logo">
+    <img src="kaiser.png" class="floating" />
+    <img src="moonton.png" class="floating" />
+    <img src="uscomputers.png" class="floating" />
   </div>
-  <!-- ▲ Floating logos end ▲ -->
 
-  <!-- Site‑wide nav items -->
+  <!-- Navigation -->
   <div class="name">
     <a href="index.html" onclick="navigateHome(event)">Haider Uraizee</a>
   </div>
@@ -90,20 +88,70 @@
           <li>Collaborated with IT consultants to support ongoing technology initiatives.</li>
         </ul>
       </div>
-    </div><!-- /timeline -->
-  </div><!-- /main‑content -->
+    </div>
+  </div>
 
-  <div class="contact">— Contact</div>
+  <div class="contact">— Contact</div>
 
-  <!-- Smooth home‑navigation transition -->
   <script>
     function navigateHome(event) {
       event.preventDefault();
       const transition = document.querySelector('.page-transition');
       transition.classList.add('active');
-      setTimeout(() => { window.location.href = 'index.html'; }, 300);
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 300);
     }
-    window.addEventListener('load', () => { document.body.classList.add('loaded'); });
+
+    function startFloatingImages() {
+      const images = document.querySelectorAll('.floating');
+      const screenW = window.innerWidth;
+      const screenH = window.innerHeight;
+
+      const floaters = [];
+
+      images.forEach(img => {
+        const obj = {
+          el: img,
+          x: Math.random() * screenW,
+          y: Math.random() * screenH,
+          dx: (Math.random() - 0.5) * 1.5,
+          dy: (Math.random() - 0.5) * 1.5,
+          angle: Math.random() * 360,
+          spinSpeed: (Math.random() - 0.5) * 2
+        };
+
+        img.style.left = obj.x + 'px';
+        img.style.top = obj.y + 'px';
+
+        floaters.push(obj);
+      });
+
+      function animate() {
+        floaters.forEach(obj => {
+          obj.x += obj.dx;
+          obj.y += obj.dy;
+          obj.angle += obj.spinSpeed;
+
+          // Bounce off edges
+          if (obj.x <= 0 || obj.x >= screenW - 60) obj.dx *= -1;
+          if (obj.y <= 0 || obj.y >= screenH - 60) obj.dy *= -1;
+
+          obj.el.style.left = obj.x + 'px';
+          obj.el.style.top = obj.y + 'px';
+          obj.el.style.transform = `rotate(${obj.angle}deg)`;
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+
+    window.addEventListener('load', () => {
+      document.body.classList.add("loaded");
+      startFloatingImages();
+    });
   </script>
 </body>
 </html>
