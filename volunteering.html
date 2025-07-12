@@ -12,22 +12,18 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       pointer-events: none;
       z-index: -1;
+      overflow: hidden;
     }
 
     .floating {
       position: absolute;
       width: 60px;
       opacity: 0.5;
-      animation: spin 20s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      will-change: transform;
     }
   </style>
 </head>
@@ -103,9 +99,9 @@
   </div>
 
   <div class="floating-images">
-    <img src="image1.png" class="floating" />
-    <img src="image2.png" class="floating" />
-    <img src="image3.png" class="floating" />
+    <img src="Cerritos.png" class="floating" />
+    <img src="Library.png" class="floating" />
+    <img src="ABC.png" class="floating" />
   </div>
 
   <div class="contact">— Contact</div>
@@ -120,36 +116,48 @@
       }, 300);
     }
 
-    function startFloating() {
-      const imgs = document.querySelectorAll('.floating');
-      imgs.forEach((img) => {
-        let x = Math.random() * window.innerWidth;
-        let y = Math.random() * window.innerHeight;
-        let dx = (Math.random() - 0.5) * 0.5;
-        let dy = (Math.random() - 0.5) * 0.5;
+    function startFloatingImages() {
+      const images = document.querySelectorAll('.floating');
+      const screenW = window.innerWidth;
+      const screenH = window.innerHeight;
 
-        img.style.left = x + 'px';
-        img.style.top = y + 'px';
+      const floaters = [];
 
-        function move() {
-          x += dx;
-          y += dy;
+      images.forEach(img => {
+        const obj = {
+          el: img,
+          x: Math.random() * screenW,
+          y: Math.random() * screenH,
+          dx: (Math.random() - 0.5) * 1.5,
+          dy: (Math.random() - 0.5) * 1.5,
+          angle: Math.random() * 360,
+          spinSpeed: (Math.random() - 0.5) * 2
+        };
+        floaters.push(obj);
+      });
+
+      function animate() {
+        floaters.forEach(obj => {
+          obj.x += obj.dx;
+          obj.y += obj.dy;
+          obj.angle += obj.spinSpeed;
 
           // Bounce off edges
-          if (x < 0 || x > window.innerWidth - img.width) dx = -dx;
-          if (y < 0 || y > window.innerHeight - img.height) dy = -dy;
+          if (obj.x <= 0 || obj.x >= screenW - 60) obj.dx *= -1;
+          if (obj.y <= 0 || obj.y >= screenH - 60) obj.dy *= -1;
 
-          img.style.transform = `translate(${x}px, ${y}px) rotate(${performance.now() / 50}deg)`;
-          requestAnimationFrame(move);
-        }
+          obj.el.style.transform = `translate(${obj.x}px, ${obj.y}px) rotate(${obj.angle}deg)`;
+        });
 
-        move();
-      });
+        requestAnimationFrame(animate);
+      }
+
+      animate();
     }
 
     window.addEventListener('load', () => {
       document.body.classList.add("loaded");
-      startFloating();
+      startFloatingImages();
     });
   </script>
 </body>
