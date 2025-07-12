@@ -6,6 +6,39 @@
   <title>Volunteering | Haider Uraizee</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    .floating-images {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .floating {
+      position: absolute;
+      animation: float 20s linear infinite, spin 10s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) translateX(0);
+      }
+      100% {
+        transform: translateY(-100vh) translateX(100vw);
+      }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
   <div class="page-transition"></div>
@@ -20,66 +53,69 @@
 
   <!-- START NEW WRAPPER -->
   <div class="main-content">
-
     <div class="intro volunteer-centered">
-        <div class="intro-content">
-          <h1>Volunteering</h1>
-          <p>
-            Volunteer work that demonstrates my commitment
-            to my field of study and to gain more experience
-            in what I would like to pursue.
-          </p>
-        </div>
-      </div>           
-
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <h2>IT Volunteer</h2>
-          <h3>ABC Unified School District</h3>
-          <p class="date">Apr 2025 – Present</p>
-          <p class="category">Education</p>
-          <ul>
-            <li>Collaborating with Network Analysts to assist in the setup and configuration of security cameras across the district.</li>
-            <li>Gaining hands-on experience in understanding how the school network infrastructure is organized and maintained.</li>
-            <li>Supporting Operations Analysts by visiting multiple campuses to ensure that classroom and office equipment were fully operational.</li>
-            <li>Working alongside IT Specialists to inspect and troubleshoot Chromebooks, ensuring all devices were student-ready.</li>
-            <li>Assisting with inventory management, helping track and organize school district technology assets.</li>
-          </ul>
-        </div>
-      
-        <div class="timeline-item">
-          <h2>IT Helper</h2>
-          <h3>Cerritos Public Library</h3>
-          <p class="date">Nov 2016 – Jan 2017</p>
-          <p class="category">Education</p>
-          <ul>
-            <li>Assisted the Systems Department with organizing and cataloging computer hardware components.</li>
-            <li>Diagnosed and resolved software issues, enhancing troubleshooting skills.</li>
-            <li>Coded, installed, and configured software on library computers, ensuring system efficiency.</li>
-            <li>Gained experience in repairing and maintaining computer hardware systems.</li>
-            <li>Provided technical support to users, addressing their IT concerns in a public environment.</li>
-            <li>Handled inbound calls to provide information and resolve technical inquiries.</li>
-          </ul>
-        </div>
-      
-        <div class="timeline-item">
-          <h2>Community Development Volunteer</h2>
-          <h3>City of Cerritos</h3>
-          <p class="date">Jun 2015 – Sep 2015</p>
-          <p class="category">Education</p>
-          <ul>
-            <li>Managed and organized files for the Community Development department, ensuring accurate documentation.</li>
-            <li>Handled inbound client inquiries and resolved issues via phone communication.</li>
-            <li>Composed daily reports detailing business openings and closures for local developments.</li>
-            <li>Collaborated with managers, staff, and clients to streamline internal communications.</li>
-            <li>Participated in team meetings to gain insights into professional office workflows and administrative procedures.</li>
-          </ul>
-        </div>
-      
+      <div class="intro-content">
+        <h1>Volunteering</h1>
+        <p>
+          Volunteer work that demonstrates my commitment
+          to my field of study and to gain more experience
+          in what I would like to pursue.
+        </p>
       </div>
-      
-  <!-- END MAIN CONTENT -->
+    </div>         
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h2>IT Volunteer</h2>
+        <h3>ABC Unified School District</h3>
+        <p class="date">Apr 2025 – Present</p>
+        <p class="category">Education</p>
+        <ul>
+          <li>Collaborating with Network Analysts to assist in the setup and configuration of security cameras across the district.</li>
+          <li>Gaining hands-on experience in understanding how the school network infrastructure is organized and maintained.</li>
+          <li>Supporting Operations Analysts by visiting multiple campuses to ensure that classroom and office equipment were fully operational.</li>
+          <li>Working alongside IT Specialists to inspect and troubleshoot Chromebooks, ensuring all devices were student-ready.</li>
+          <li>Assisting with inventory management, helping track and organize school district technology assets.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <h2>IT Helper</h2>
+        <h3>Cerritos Public Library</h3>
+        <p class="date">Nov 2016 – Jan 2017</p>
+        <p class="category">Education</p>
+        <ul>
+          <li>Assisted the Systems Department with organizing and cataloging computer hardware components.</li>
+          <li>Diagnosed and resolved software issues, enhancing troubleshooting skills.</li>
+          <li>Coded, installed, and configured software on library computers, ensuring system efficiency.</li>
+          <li>Gained experience in repairing and maintaining computer hardware systems.</li>
+          <li>Provided technical support to users, addressing their IT concerns in a public environment.</li>
+          <li>Handled inbound calls to provide information and resolve technical inquiries.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <h2>Community Development Volunteer</h2>
+        <h3>City of Cerritos</h3>
+        <p class="date">Jun 2015 – Sep 2015</p>
+        <p class="category">Education</p>
+        <ul>
+          <li>Managed and organized files for the Community Development department, ensuring accurate documentation.</li>
+          <li>Handled inbound client inquiries and resolved issues via phone communication.</li>
+          <li>Composed daily reports detailing business openings and closures for local developments.</li>
+          <li>Collaborated with managers, staff, and clients to streamline internal communications.</li>
+          <li>Participated in team meetings to gain insights into professional office workflows and administrative procedures.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+  </div>
+
+  <div class="floating-images">
+    <img src="Cerritos.png" class="floating" />
+    <img src="Library.png" class="floating" />
+    <img src="ABC.png" class="floating" />
+  </div>
 
   <div class="contact">— Contact</div>
 
@@ -95,6 +131,13 @@
 
     window.addEventListener("load", () => {
       document.body.classList.add("loaded");
+
+      document.querySelectorAll(".floating").forEach((el) => {
+        el.style.top = Math.random() * window.innerHeight + "px";
+        el.style.left = Math.random() * window.innerWidth + "px";
+        el.style.animationDuration = (10 + Math.random() * 20) + "s";
+        el.style.width = (50 + Math.random() * 100) + "px";
+      });
     });
   </script>
 </body>
