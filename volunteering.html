@@ -23,7 +23,7 @@
       position: absolute;
       width: 60px;
       opacity: 0.5;
-      will-change: transform;
+      will-change: transform, left, top;
     }
   </style>
 </head>
@@ -38,7 +38,6 @@
     <a href="index.html" onclick="navigateHome(event)">Back to Home</a>
   </div>
 
-  <!-- START NEW WRAPPER -->
   <div class="main-content">
     <div class="intro volunteer-centered">
       <div class="intro-content">
@@ -95,9 +94,9 @@
         </ul>
       </div>
     </div>
-    <!-- END MAIN CONTENT -->
   </div>
 
+  <!-- Floating images -->
   <div class="floating-images">
     <img src="Cerritos.png" class="floating" />
     <img src="Library.png" class="floating" />
@@ -133,6 +132,10 @@
           angle: Math.random() * 360,
           spinSpeed: (Math.random() - 0.5) * 2
         };
+
+        img.style.left = obj.x + 'px';
+        img.style.top = obj.y + 'px';
+
         floaters.push(obj);
       });
 
@@ -146,7 +149,9 @@
           if (obj.x <= 0 || obj.x >= screenW - 60) obj.dx *= -1;
           if (obj.y <= 0 || obj.y >= screenH - 60) obj.dy *= -1;
 
-          obj.el.style.transform = `translate(${obj.x}px, ${obj.y}px) rotate(${obj.angle}deg)`;
+          obj.el.style.left = obj.x + 'px';
+          obj.el.style.top = obj.y + 'px';
+          obj.el.style.transform = `rotate(${obj.angle}deg)`;
         });
 
         requestAnimationFrame(animate);
