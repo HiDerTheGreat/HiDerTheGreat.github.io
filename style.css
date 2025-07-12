@@ -580,7 +580,7 @@ section {
   }
   
   /* Center the volunteering intro section on the volunteering page */
-.volunteer-centered {
+  .volunteer-centered {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -591,5 +591,15 @@ section {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
+  }
+  
+  .volunteer-centered .intro-content h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 3rem; /* Adjust if needed for size match */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
   }
   
