@@ -7,19 +7,26 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
+    /* Container for timeline section */
+    .timeline-container {
+      width: 100%;
+      padding: 0 20px;
+      margin-top: 0;
+    }
+
     /* Projects-specific styles that extend your base theme */
     .timeline {
       position: relative;
       padding: 40px 0;
-      max-width: 900px;
-      margin: 100px auto 50px;
+      max-width: 1200px;
+      margin: 0 auto;
       z-index: 5;
     }
 
     .timeline::before {
       content: '';
       position: absolute;
-      right: 50%;
+      right: 40%;
       top: 0;
       bottom: 0;
       width: 3px;
@@ -49,7 +56,7 @@
     }
 
     .project-card {
-      margin-left: 60%;
+      margin-left: 45%;
       text-align: left;
       background: rgba(212, 175, 55, 0.05);
       backdrop-filter: blur(10px);
@@ -62,6 +69,7 @@
       box-shadow: 
         0 0 30px rgba(212, 175, 55, 0.1),
         inset 0 0 30px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
     }
 
     .project-card:hover {
@@ -75,7 +83,7 @@
 
     .timeline-dot {
       position: absolute;
-      right: 50%;
+      right: 40%;
       top: 40px;
       width: 20px;
       height: 20px;
@@ -142,17 +150,24 @@
     /* Responsive adjustments for timeline */
     @media (max-width: 768px) {
       .timeline::before {
-        right: 30px;
+        right: 20px;
+        transform: translateX(0);
       }
 
       .timeline-dot {
-        right: 30px;
+        right: 20px;
+        transform: translateX(0);
       }
 
       .project-card {
-        margin-right: 80px;
+        margin-right: 60px;
         margin-left: 0;
         text-align: left;
+        max-width: none;
+      }
+
+      .timeline-container {
+        padding: 0 10px;
       }
     }
 
@@ -204,7 +219,9 @@
         </p>
       </div>
     </div>
+  </div>
 
+  <div class="timeline-container">
     <div class="timeline">
       <!-- MyPrayerPal - 2025 (Latest/First) -->
       <div class="timeline-item">
