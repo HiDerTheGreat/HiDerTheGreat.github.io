@@ -4,28 +4,443 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Haider Uraizee</title>
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: 
+        /* Gold speckles */
+        radial-gradient(circle at 15% 20%, #d4af37 1px, transparent 1px),
+        radial-gradient(circle at 85% 30%, #d4af37 0.8px, transparent 0.8px),
+        radial-gradient(circle at 45% 70%, #d4af37 1.2px, transparent 1.2px),
+        radial-gradient(circle at 75% 85%, #d4af37 0.9px, transparent 0.9px),
+        radial-gradient(circle at 25% 60%, #d4af37 0.7px, transparent 0.7px),
+        radial-gradient(circle at 95% 15%, #d4af37 1.1px, transparent 1.1px),
+        radial-gradient(circle at 65% 40%, #d4af37 0.6px, transparent 0.6px),
+        radial-gradient(circle at 5% 90%, #d4af37 1.3px, transparent 1.3px),
+        /* White/silver speckles */
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,0.8) 0.5px, transparent 0.5px),
+        radial-gradient(circle at 70% 55%, rgba(255,255,255,0.6) 0.7px, transparent 0.7px),
+        radial-gradient(circle at 50% 10%, rgba(255,255,255,0.9) 0.4px, transparent 0.4px),
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.7) 0.6px, transparent 0.6px),
+        radial-gradient(circle at 80% 75%, rgba(255,255,255,0.5) 0.8px, transparent 0.8px),
+        radial-gradient(circle at 40% 95%, rgba(255,255,255,0.6) 0.5px, transparent 0.5px),
+        /* Dark speckles */
+        radial-gradient(circle at 60% 20%, rgba(0,0,0,0.8) 1px, transparent 1px),
+        radial-gradient(circle at 10% 50%, rgba(0,0,0,0.6) 0.8px, transparent 0.8px),
+        radial-gradient(circle at 90% 60%, rgba(0,0,0,0.7) 1.2px, transparent 1.2px),
+        radial-gradient(circle at 35% 15%, rgba(0,0,0,0.5) 0.9px, transparent 0.9px),
+        /* Base granite texture */
+        linear-gradient(45deg, #2a2a2a 0%, #1a1a1a 25%, #333333 50%, #1e1e1e 75%, #252525 100%),
+        linear-gradient(135deg, #1f1f1f 0%, #0f0f0f 50%, #2f2f2f 100%);
+      background-size: 
+        200px 200px, 180px 180px, 220px 220px, 160px 160px, 190px 190px, 210px 210px, 170px 170px, 240px 240px,
+        150px 150px, 130px 130px, 160px 160px, 140px 140px, 120px 120px, 180px 180px,
+        100px 100px, 110px 110px, 90px 90px, 130px 130px,
+        100% 100%, 100% 100%;
+      background-attachment: fixed;
+      color: #d4af37;
+      font-family: 'Playfair Display', serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        /* Additional fine granite texture */
+        radial-gradient(circle at 12% 35%, rgba(212, 175, 55, 0.3) 0.3px, transparent 0.3px),
+        radial-gradient(circle at 78% 45%, rgba(212, 175, 55, 0.4) 0.2px, transparent 0.2px),
+        radial-gradient(circle at 55% 75%, rgba(212, 175, 55, 0.2) 0.4px, transparent 0.4px),
+        radial-gradient(circle at 88% 25%, rgba(255, 255, 255, 0.4) 0.2px, transparent 0.2px),
+        radial-gradient(circle at 22% 65%, rgba(255, 255, 255, 0.3) 0.3px, transparent 0.3px),
+        radial-gradient(circle at 67% 85%, rgba(0, 0, 0, 0.6) 0.5px, transparent 0.5px);
+      background-size: 80px 80px, 95px 95px, 110px 110px, 70px 70px, 85px 85px, 60px 60px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .page-transition {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0a0a0a;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .page-transition.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .name {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      font-size: 1.2rem;
+      font-family: 'Playfair Display', serif;
+      color: #d4af37;
+      font-weight: 400;
+      letter-spacing: 1px;
+      z-index: 10;
+      text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+
+    .name a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .name a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    }
+
+    .back {
+      position: absolute;
+      top: 80px;
+      left: 40px;
+      font-size: 0.9rem;
+      z-index: 10;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 20px 50px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .back a {
+      color: #d4af37;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: rgba(212, 175, 55, 0.1);
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .back a:hover {
+      color: #ffffff;
+      background-color: rgba(212, 175, 55, 0.2);
+      border-color: #d4af37;
+      transform: translateX(-5px);
+    }
+
+    .back a::before {
+      content: '←';
+      font-size: 1.2em;
+      transition: transform 0.3s ease;
+    }
+
+    .back a:hover::before {
+      transform: translateX(-3px);
+    }
+
+    .intro h1 {
+      font-size: 3.5rem;
+      font-weight: 400;
+      letter-spacing: -1px;
+      margin-bottom: 2rem;
+      line-height: 1.1;
+      text-transform: uppercase;
+      color: #d4af37;
+      text-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    }
+
+    .timeline {
+      position: relative;
+      padding: 40px 0;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      max-width: 400px;
+      font-weight: 400;
+      color: #d4af37;
+      text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .timeline-item:nth-child(1) { animation-delay: 0.2s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.6s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      right: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #d4af37;
+      transform: translateX(50%);
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+
+    .project-card {
+      margin-left: 60%;
+      text-align: left;
+    }
+
+    .project-card {
+      margin-left: 60%;
+      text-align: left;
+      background: rgba(212, 175, 55, 0.05);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(212, 175, 55, 0.3);
+      border-radius: 15px;
+      padding: 30px;
+      position: relative;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      box-shadow: 
+        0 0 30px rgba(212, 175, 55, 0.1),
+        inset 0 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      background: rgba(212, 175, 55, 0.08);
+      border-color: rgba(212, 175, 55, 0.6);
+      box-shadow: 
+        0 20px 40px rgba(212, 175, 55, 0.2),
+        inset 0 0 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      right: 50%;
+      top: 40px;
+      width: 20px;
+      height: 20px;
+      background: #d4af37;
+      border-radius: 50%;
+      transform: translateX(50%);
+      z-index: 2;
+      border: 4px solid #1a1a1a;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+
+    .timeline-item:hover .timeline-dot {
+      width: 30px;
+      height: 30px;
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
+    }
+
+    .project-date {
+      font-size: 0.9rem;
+      color: #d4af37;
+      font-weight: 400;
+      margin-bottom: 10px;
+      opacity: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .project-title {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+      color: #d4af37;
+      text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+    }
+
+    .project-description {
+      color: #d4af37;
+      opacity: 0.8;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-start;
+    }
+
+    .tag {
+      background: rgba(212, 175, 55, 0.2);
+      color: #d4af37;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 400;
+    }
+
+    .contact {
+      position: absolute;
+      bottom: 50px;
+      left: 50px;
+      font-size: 0.9rem;
+      color: #d4af37;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 400;
+      z-index: 10;
+      text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before {
+        right: 30px;
+      }
+
+      .timeline-dot {
+        right: 30px;
+      }
+
+      .project-card {
+        margin-right: 80px;
+        margin-left: 0;
+        text-align: left;
+      }
+
+      .intro h1 {
+        font-size: 2.5rem;
+      }
+
+      .name, .back {
+        position: relative;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+      }
+
+      .container {
+        padding-top: 80px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="page-transition"></div>
   
+  <div class="floating-elements">
+  </div>
+  
   <div class="name">
     <a href="index.html" onclick="navigateHome(event)">Haider Uraizee</a>
   </div>
-
   <div class="back">
     <a href="index.html" onclick="navigateHome(event)">Back to Home</a>
   </div>
-
+  
   <div class="container">
-    <div class="circle-line"></div>
     <div class="intro">
       <h1>Projects</h1>
       <p>
         Explore my technical projects showcasing skills in web development,
         cybersecurity, and innovative problem-solving solutions.
       </p>
+    </div>
+
+    <div class="timeline">
+      <!-- MyPrayerPal - 2025 (Latest/First) -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="project-card">
+          <div class="project-date">May 2025 - August 2025</div>
+          <h3 class="project-title">MyPrayerPal</h3>
+          <p class="project-description">
+            Created a praying app to help Muslims stay focused as they pray using Artificial Intelligence and Machine Learning. 
+            Allowed Muslims to communicate directly with Islamic Scholars for accurate information.
+          </p>
+          <div class="project-tags">
+            <span class="tag">AI/ML</span>
+            <span class="tag">Mobile App</span>
+            <span class="tag">Religious Technology</span>
+            <span class="tag">Community Platform</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Smart Pickleball - 2020 (Middle) -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="project-card">
+          <div class="project-date">February 2020 - May 2020</div>
+          <h3 class="project-title">Smart Pickleball</h3>
+          <p class="project-description">
+            Created a device to help beginner players understand how the game works (earn points, switch sides, whose turn, etc.). 
+            Created an app and prototype using 3D Printing software. Introduced to Arduino in the learning process.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Arduino</span>
+            <span class="tag">3D Printing</span>
+            <span class="tag">Mobile App</span>
+            <span class="tag">IoT</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SurfBoost - 2020 (Oldest/Last) -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="project-card">
+          <div class="project-date">February 2020 - May 2020</div>
+          <h3 class="project-title">SurfBoost</h3>
+          <p class="project-description">
+            Created a surfing device to help keep beginner surfers balanced when out in the ocean. 
+            Competed in competitions within the university and achieved first place.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Hardware Design</span>
+            <span class="tag">Competition Winner</span>
+            <span class="tag">Sports Technology</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -45,7 +460,72 @@
 
     window.addEventListener("load", () => {
       document.body.classList.add("loaded");
+      
+      // Add scroll-triggered animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+          }
+        });
+      });
+
+      document.querySelectorAll('.timeline-item').forEach(item => {
+        observer.observe(item);
+      });
     });
+
+    // Add parallax effect for floating elements
+    window.addEventListener('mousemove', (e) => {
+      const circles = document.querySelectorAll('.floating-circle');
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+
+      circles.forEach((circle, index) => {
+        const speed = (index + 1) * 0.5;
+        const xPos = x * speed * 50;
+        const yPos = y * speed * 50;
+        
+        circle.style.transform = `translate(${xPos}px, ${yPos}px) rotate(${x * 360}deg)`;
+      });
+    });
+
+    // Add click effects to project cards
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', function() {
+        // Add a ripple effect
+        const ripple = document.createElement('div');
+        ripple.style.position = 'absolute';
+        ripple.style.borderRadius = '50%';
+        ripple.style.background = 'rgba(78, 205, 196, 0.3)';
+        ripple.style.transform = 'scale(0)';
+        ripple.style.animation = 'ripple 0.6s linear';
+        ripple.style.left = '50%';
+        ripple.style.top = '50%';
+        ripple.style.width = '20px';
+        ripple.style.height = '20px';
+        ripple.style.marginLeft = '-10px';
+        ripple.style.marginTop = '-10px';
+
+        this.appendChild(ripple);
+
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+
+    // CSS for ripple animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes ripple {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
   </script>
 </body>
 </html>
