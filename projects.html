@@ -5,212 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Haider Uraizee</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    /* Container for timeline section */
-    .timeline-container {
-      width: 100%;
-      padding: 0 20px;
-      margin-top: 0;
-    }
-
-    /* Projects-specific styles that extend your base theme */
-    .timeline {
-      position: relative;
-      padding: 40px 0;
-      max-width: 1200px;
-      margin: 0 auto;
-      z-index: 5;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      right: 40%;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: #d4af37;
-      transform: translateX(50%);
-      border-radius: 2px;
-      box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 60px;
-      opacity: 0;
-      transform: translateY(50px);
-      animation: fadeInUp 0.8s ease forwards;
-    }
-
-    .timeline-item:nth-child(1) { animation-delay: 0.2s; }
-    .timeline-item:nth-child(2) { animation-delay: 0.4s; }
-    .timeline-item:nth-child(3) { animation-delay: 0.6s; }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .project-card {
-      margin-left: 45%;
-      text-align: left;
-      background: rgba(212, 175, 55, 0.05);
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(212, 175, 55, 0.3);
-      border-radius: 15px;
-      padding: 30px;
-      position: relative;
-      transition: all 0.4s ease;
-      cursor: pointer;
-      box-shadow: 
-        0 0 30px rgba(212, 175, 55, 0.1),
-        inset 0 0 30px rgba(0, 0, 0, 0.3);
-      max-width: 500px;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      background: rgba(212, 175, 55, 0.08);
-      border-color: rgba(212, 175, 55, 0.6);
-      box-shadow: 
-        0 20px 40px rgba(212, 175, 55, 0.2),
-        inset 0 0 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .timeline-dot {
-      position: absolute;
-      right: 40%;
-      top: 40px;
-      width: 20px;
-      height: 20px;
-      background: #d4af37;
-      border-radius: 50%;
-      transform: translateX(50%);
-      z-index: 2;
-      border: 4px solid #1a1a1a;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-    }
-
-    .timeline-item:hover .timeline-dot {
-      width: 30px;
-      height: 30px;
-      box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
-    }
-
-    .project-date {
-      font-size: 0.9rem;
-      color: #d4af37;
-      font-weight: 400;
-      margin-bottom: 10px;
-      opacity: 0.9;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .project-title {
-      font-size: 1.8rem;
-      font-weight: 500;
-      margin-bottom: 15px;
-      color: #d4af37;
-      text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
-    }
-
-    .project-description {
-      color: #d4af37;
-      opacity: 0.8;
-      line-height: 1.7;
-      margin-bottom: 20px;
-      font-weight: 400;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: flex-start;
-    }
-
-    .tag {
-      background: rgba(212, 175, 55, 0.2);
-      color: #d4af37;
-      padding: 5px 12px;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-weight: 400;
-    }
-
-    /* Responsive adjustments for timeline */
-    @media (max-width: 768px) {
-      .timeline::before {
-        right: 20px;
-        transform: translateX(0);
-      }
-
-      .timeline-dot {
-        right: 20px;
-        transform: translateX(0);
-      }
-
-      .project-card {
-        margin-right: 60px;
-        margin-left: 0;
-        text-align: left;
-        max-width: none;
-      }
-
-      .timeline-container {
-        padding: 0 10px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .timeline::before {
-        right: 20px;
-      }
-
-      .timeline-dot {
-        right: 20px;
-      }
-
-      .project-card {
-        margin-right: 60px;
-        margin-left: 0;
-      }
-
-      .project-title {
-        font-size: 1.5rem;
-      }
-    }
-
-    @keyframes ripple {
-      to {
-        transform: scale(4);
-        opacity: 0;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="page-transition"></div>
-  
+
   <div class="name">
     <a href="index.html" onclick="navigateHome(event)">Haider Uraizee</a>
   </div>
+
   <div class="back">
     <a href="index.html" onclick="navigateHome(event)">Back to Home</a>
   </div>
-  
-  <div class="container">
-    <div class="circle-line"></div>
-    <div class="intro">
+
+  <div class="main-content">
+    <div class="intro volunteer-centered">
       <div class="intro-content">
         <h1>Projects</h1>
         <p>
@@ -218,65 +27,48 @@
           cybersecurity, and innovative problem-solving solutions.
         </p>
       </div>
-    </div>
-  </div>
+    </div>         
 
-  <div class="timeline-container">
     <div class="timeline">
-      <!-- MyPrayerPal - 2025 (Latest/First) -->
       <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="project-card">
-          <div class="project-date">May 2025 - August 2025</div>
-          <h3 class="project-title">MyPrayerPal</h3>
-          <p class="project-description">
-            Created a praying app to help Muslims stay focused as they pray using Artificial Intelligence and Machine Learning. 
-            Allowed Muslims to communicate directly with Islamic Scholars for accurate information.
-          </p>
-          <div class="project-tags">
-            <span class="tag">AI/ML</span>
-            <span class="tag">Mobile App</span>
-            <span class="tag">Religious Technology</span>
-            <span class="tag">Community Platform</span>
-          </div>
-        </div>
+        <h2>MyPrayerPal</h2>
+        <h3>AI/ML Mobile Application</h3>
+        <p class="date">May 2025 – August 2025</p>
+        <p class="category">Mobile Development</p>
+        <ul>
+          <li>Created a praying app to help Muslims stay focused as they pray using Artificial Intelligence and Machine Learning.</li>
+          <li>Allowed Muslims to communicate directly with Islamic Scholars for accurate information.</li>
+          <li>Implemented AI-powered features to enhance prayer experience and spiritual guidance.</li>
+          <li>Developed community platform functionality for user interaction and support.</li>
+        </ul>
       </div>
 
-      <!-- Smart Pickleball - 2020 (Middle) -->
       <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="project-card">
-          <div class="project-date">February 2020 - May 2020</div>
-          <h3 class="project-title">Smart Pickleball</h3>
-          <p class="project-description">
-            Created a device to help beginner players understand how the game works (earn points, switch sides, whose turn, etc.). 
-            Created an app and prototype using 3D Printing software. Introduced to Arduino in the learning process.
-          </p>
-          <div class="project-tags">
-            <span class="tag">Arduino</span>
-            <span class="tag">3D Printing</span>
-            <span class="tag">Mobile App</span>
-            <span class="tag">IoT</span>
-          </div>
-        </div>
+        <h2>Smart Pickleball</h2>
+        <h3>IoT Sports Device</h3>
+        <p class="date">February 2020 – May 2020</p>
+        <p class="category">Hardware Development</p>
+        <ul>
+          <li>Created a device to help beginner players understand how the game works (earn points, switch sides, whose turn, etc.).</li>
+          <li>Created an app and prototype using 3D Printing software.</li>
+          <li>Introduced to Arduino in the learning process and gained hands-on experience with microcontrollers.</li>
+          <li>Developed mobile application interface to complement the physical device.</li>
+          <li>Integrated IoT functionality to track game progress and provide real-time feedback.</li>
+        </ul>
       </div>
 
-      <!-- SurfBoost - 2020 (Oldest/Last) -->
       <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="project-card">
-          <div class="project-date">February 2020 - May 2020</div>
-          <h3 class="project-title">SurfBoost</h3>
-          <p class="project-description">
-            Created a surfing device to help keep beginner surfers balanced when out in the ocean. 
-            Competed in competitions within the university and achieved first place.
-          </p>
-          <div class="project-tags">
-            <span class="tag">Hardware Design</span>
-            <span class="tag">Competition Winner</span>
-            <span class="tag">Sports Technology</span>
-          </div>
-        </div>
+        <h2>SurfBoost</h2>
+        <h3>Surfing Balance Device</h3>
+        <p class="date">February 2020 – May 2020</p>
+        <p class="category">Hardware Engineering</p>
+        <ul>
+          <li>Created a surfing device to help keep beginner surfers balanced when out in the ocean.</li>
+          <li>Competed in competitions within the university and achieved first place.</li>
+          <li>Designed and prototyped hardware solution for improved surfing stability.</li>
+          <li>Conducted extensive testing and iteration to optimize device performance.</li>
+          <li>Presented project to judges and received recognition for innovation in sports technology.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -286,68 +78,62 @@
   <script>
     function navigateHome(event) {
       event.preventDefault();
-      
       const transition = document.querySelector('.page-transition');
       transition.classList.add('active');
-      
       setTimeout(() => {
         window.location.href = 'index.html';
       }, 300);
     }
 
-    window.addEventListener("load", () => {
-      document.body.classList.add("loaded");
-      
-      // Add scroll-triggered animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.animationPlayState = 'running';
-          }
+    function startFloatingImages() {
+      const images = document.querySelectorAll('.floating');
+      const screenW = window.innerWidth;
+      const screenH = window.innerHeight;
+
+      const floaters = [];
+
+      images.forEach(img => {
+        const obj = {
+          el: img,
+          x: Math.random() * screenW,
+          y: Math.random() * screenH,
+          dx: (Math.random() - 0.5) * 1.5,
+          dy: (Math.random() - 0.5) * 1.5,
+          angle: Math.random() * 360,
+          spinSpeed: (Math.random() - 0.5) * 2
+        };
+
+        img.style.left = obj.x + 'px';
+        img.style.top = obj.y + 'px';
+
+        floaters.push(obj);
+      });
+
+      function animate() {
+        floaters.forEach(obj => {
+          obj.x += obj.dx;
+          obj.y += obj.dy;
+          obj.angle += obj.spinSpeed;
+
+          // Bounce off edges
+          if (obj.x <= 0 || obj.x >= screenW - 60) obj.dx *= -1;
+          if (obj.y <= 0 || obj.y >= screenH - 60) obj.dy *= -1;
+
+          obj.el.style.left = obj.x + 'px';
+          obj.el.style.top = obj.y + 'px';
+          obj.el.style.transform = `rotate(${obj.angle}deg)`;
         });
-      });
 
-      document.querySelectorAll('.timeline-item').forEach(item => {
-        observer.observe(item);
-      });
-    });
-
-    // Add click effects to project cards
-    document.querySelectorAll('.project-card').forEach(card => {
-      card.addEventListener('click', function() {
-        // Add a ripple effect
-        const ripple = document.createElement('div');
-        ripple.style.position = 'absolute';
-        ripple.style.borderRadius = '50%';
-        ripple.style.background = 'rgba(212, 175, 55, 0.3)';
-        ripple.style.transform = 'scale(0)';
-        ripple.style.animation = 'ripple 0.6s linear';
-        ripple.style.left = '50%';
-        ripple.style.top = '50%';
-        ripple.style.width = '20px';
-        ripple.style.height = '20px';
-        ripple.style.marginLeft = '-10px';
-        ripple.style.marginTop = '-10px';
-
-        this.appendChild(ripple);
-
-        setTimeout(() => {
-          ripple.remove();
-        }, 600);
-      });
-    });
-
-    // CSS for ripple animation
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes ripple {
-        to {
-          transform: scale(4);
-          opacity: 0;
-        }
+        requestAnimationFrame(animate);
       }
-    `;
-    document.head.appendChild(style);
+
+      animate();
+    }
+
+    window.addEventListener('load', () => {
+      document.body.classList.add("loaded");
+      startFloatingImages();
+    });
   </script>
 </body>
 </html>
